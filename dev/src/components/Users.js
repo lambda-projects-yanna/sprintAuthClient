@@ -2,29 +2,27 @@ import React from 'react';
 import axios from 'axios';
 import requiresAuth from './requiresAuth';
 
-class Users extends React.Component {
+class Jokes extends React.Component {
   state = {
-    users: [],
+    jokes: [],
   };
 
   render() {
     return (
       <>
-        <h2>List of Users</h2>
-        <ul>
-          {this.state.users.map(u => (
-            <li key={u.id}>{u.username}</li>
-          ))}
-        </ul>
+        <h2>Jokes</h2>
+          {this.state.jokes.map(jokes => {
+            return <p>{jokes.joke}</p>
+          })}
       </>
     );
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3300/api/users').then(res => {
-      this.setState({ users: res.data.users });
+    axios.get('http://localhost:5000/api/jokes').then(res => {
+      this.setState({ jokes: res.data });
     });
   }
 }
 
-export default requiresAuth(Users);
+export default requiresAuth(Jokes);

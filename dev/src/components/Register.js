@@ -48,13 +48,13 @@ class Register extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const endpoint = 'http://localhost:3300/api/register';
+    const endpoint = 'http://localhost:5000/api/register';
 
     axios
       .post(endpoint, this.state)
       .then(res => {
         localStorage.setItem('jwt', res.data.token);
-        this.props.history.push('/users');
+        this.props.history.push('/jokes');
       })
       .catch(error => console.error(error));
   };

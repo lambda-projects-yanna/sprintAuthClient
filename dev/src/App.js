@@ -13,7 +13,7 @@ class App extends Component {
           <nav>
             <NavLink to="/login">Login</NavLink>
             &nbsp;|&nbsp;
-            <NavLink to="/users">Users</NavLink>
+            <NavLink to="/users">Jokes</NavLink>
             &nbsp;|&nbsp;
             <NavLink to="/register">Register</NavLink>
             &nbsp;|&nbsp;
